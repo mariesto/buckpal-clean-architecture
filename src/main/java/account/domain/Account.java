@@ -4,15 +4,22 @@ import static lombok.AccessLevel.PRIVATE;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Value;
 
 @AllArgsConstructor (access = PRIVATE)
+@Getter
 public class Account {
+
     private AccountId id;
 
     private Money baselineBalance;
 
     private ActivityWindow activityWindow;
+
+    public static Account withId(AccountId accountId, Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(accountId, baselineBalance, activityWindow);
+    }
 
     public static Account withoutId(Money baselineBalance, ActivityWindow activityWindow) {
         return new Account(null, baselineBalance, activityWindow);
