@@ -1,4 +1,4 @@
-package account.application.port.in;
+package account.application.port.in.fetchaccount;
 
 import account.domain.Account;
 import account.domain.Money;

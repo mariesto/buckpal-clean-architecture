@@ -1,4 +1,4 @@
-package account.application.port.in;
+package account.application.port.in.sendmoney;
 
 public interface SendMoneyUseCase {
 

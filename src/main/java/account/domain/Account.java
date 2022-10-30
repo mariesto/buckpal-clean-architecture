@@ -1,19 +1,25 @@
 package account.domain;
 
-import static lombok.AccessLevel.*;
+import static lombok.AccessLevel.PRIVATE;
 import java.time.LocalDateTime;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 
 @AllArgsConstructor (access = PRIVATE)
 public class Account {
     private AccountId id;
+
     private Money baselineBalance;
+
     private ActivityWindow activityWindow;
 
-    @Value
-    public static class AccountId {
-        private Long value;
+    public static Account withoutId(Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(null, baselineBalance, activityWindow);
+    }
+
+    public Optional<AccountId> getId() {
+        return Optional.ofNullable(this.id);
     }
 
     public Money calculateBalance() {
@@ -35,9 +41,14 @@ public class Account {
         return Money.add(this.baselineBalance, money.negate()).isPositive();
     }
 
-    public boolean deposit(Money money, AccountId accountId){
+    public boolean deposit(Money money, AccountId accountId) {
         Activity activity = new Activity(this.id, accountId, this.id, LocalDateTime.now(), money);
         this.activityWindow.addActivity(activity);
         return true;
+    }
+
+    @Value
+    public static class AccountId {
+        private Long value;
     }
 }

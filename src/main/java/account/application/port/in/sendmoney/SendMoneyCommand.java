@@ -1,4 +1,4 @@
-package account.application.port.in;
+package account.application.port.in.sendmoney;
 
 import javax.validation.constraints.NotNull;
 import account.domain.Account.AccountId;

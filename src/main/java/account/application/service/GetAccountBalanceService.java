@@ -1,7 +1,7 @@
 package account.application.service;
 
 import java.time.LocalDateTime;
-import account.application.port.in.GetAccountBalanceQuery;
+import account.application.port.in.fetchaccount.GetAccountBalanceQuery;
 import account.application.port.out.LoadAccountPort;
 import account.domain.Account;
 import account.domain.Money;

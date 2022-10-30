@@ -1,3 +1,9 @@
 package account.application.port.out;
 
-public interface AccountLock {}
+import account.domain.Account;
+
+public interface AccountLock {
+    void lockAccount(Account.AccountId accountId);
+
+    void releaseAccount(Account.AccountId accountId);
+}
