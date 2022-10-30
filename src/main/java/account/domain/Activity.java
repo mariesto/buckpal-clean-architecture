@@ -1,4 +1,4 @@
-package domain;
+package account.domain;
 
 import java.time.LocalDateTime;
 import lombok.Getter;

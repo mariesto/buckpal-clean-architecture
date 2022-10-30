@@ -1,4 +1,4 @@
-package domain;
+package account.domain;
 
 import java.math.BigInteger;
 import lombok.NonNull;

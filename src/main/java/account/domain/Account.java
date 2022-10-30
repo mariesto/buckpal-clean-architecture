@@ -1,8 +1,7 @@
-package domain;
+package account.domain;
 
 import static lombok.AccessLevel.*;
 import java.time.LocalDateTime;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 

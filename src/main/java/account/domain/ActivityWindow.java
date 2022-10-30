@@ -1,4 +1,4 @@
-package domain;
+package account.domain;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import domain.Account.AccountId;
+import account.domain.Account.AccountId;
 import lombok.NonNull;
 
 public class ActivityWindow {
