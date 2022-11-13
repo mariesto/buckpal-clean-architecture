@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  database:
+    container_name: buckpal-mysql
+    image: mysql:8.0.31
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: buckpal
+    networks:
+      default:
+        aliases:
+        - mysql
+    ports:
+      - "127.0.0.1:33077:3306"
+    volumes:
+      - buckpal-mysql-data:/var/lib/mysql
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  buckpal-mysql-data:
